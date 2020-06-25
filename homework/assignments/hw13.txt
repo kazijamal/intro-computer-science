@@ -1,0 +1,18 @@
+Due Thurs., 10/12
+
+1. Exam #2: Fri. 10/13 
+
+2. From the Course Web Page, Scheme Hw, download and review heronSqrt.rkt.
+
+
+3. What is the value of (mysqrt 7) when epsilon is set to 0.1?
+
+4. What is the value of (sqrt 7)?
+
+5. Which is more accurate mysqrt or sqrt?
+
+6. Find the smallest value of epsilon such that mysqrt is more accurate than sqrt. 
+
+
+
+ 

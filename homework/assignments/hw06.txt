@@ -1,0 +1,21 @@
+Due: Tues., 9/19
+----
+
+
+1. Using only +,-,*,/ and abs, write the function:
+
+     ;; Number Number -> Number
+     (max2 a b) that returns the maximum of a and b.
+
+   Test Cases:
+   ------------
+    (max2 3 5) evaluates to 5
+    (max2 5 3) evaluates to 3
+    (max2 -3 -5) evaluates to -3
+    (max2 3 3) evaluates 3
+
+
+2. Use the (max2 a b) from question 1, assume it works, write
+   the function (max3 a b c) that returns the maximum value
+   of a, b and c.
+

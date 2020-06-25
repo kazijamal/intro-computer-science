@@ -1,0 +1,29 @@
+Due: Wed., 10/4
+
+1. Exam: Fri., 10/13
+
+2. Given,
+   
+   ;; Boolean Boolean Boolean -> Boolean
+   (define xor3
+        (lambda (a b c)
+            (and (not (and a b c))
+                 (xor (xor a b) c))))
+
+   a.  Evaluate the function call (xor3 #t #t #f).
+   b.  Will xor3 ever short circuit?
+
+
+2. Build the Rectangular Function defined  below
+
+
+                    0, whenever |t| > 1/2
+         rect(t) =  1/2, whenever |t| = 1/2
+                    1 , whenever |t| < 1/2
+
+    Test Cases:
+    (rect 5) = 0
+    (rect -5) = 0
+    (rect 1/2) = 1/2
+    (rect -1/2) = 1/2
+    (rect 0) = 1

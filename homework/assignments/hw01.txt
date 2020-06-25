@@ -1,0 +1,31 @@
+Due: Fri. 9/08
+===============
+
+I. If your not using a school computer, 
+   download DrRacket from www.racket-lang.org. 
+
+
+II. Open the DrRacket IDE, the integrated development environment.
+    Select a language:
+         - Section How To Design Programs
+         - subsection: Beginning Student
+    Sync the windows of DrRacket by pressing the Run button in the top right corner.
+    Is the bottom window's language Beginning Student?
+
+III. Test DrRacket
+     - in the top window, write the following:
+       ;; This is my first program
+       (define a 10)
+       (define b 2)
+       (+ a b)
+       (- a b) 
+       (- b a)      
+       (* a b)
+       (/ a b)
+       (/ b a)
+ 
+IV. Press the run icon (top right corner).
+
+V. Save the program as hw01.rkt.
+
+

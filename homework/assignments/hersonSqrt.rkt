@@ -1,0 +1,89 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname hersonSqrt) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;;; ***   Variables ************************************************************ 
+(define a 4) ;; square root of a
+(define epsilon 1e-1) ;; used in goodEnough?
+;; initial guess
+(define guess_0 1) 
+
+
+;;;; **** Functions *************************************************************
+;; Number Number -> Number
+;; generates a better guess of the square root of x
+;; where guess is the most recent guess.
+(define betterGuess
+  (λ(x guess)
+    (/ (+ guess (/ x guess)) 2)))
+
+;; next 9 guesses
+(define guess_1 (betterGuess a guess_0))
+(define guess_2 (betterGuess a guess_1))
+(define guess_3 (betterGuess a guess_2))
+(define guess_4 (betterGuess a guess_3))
+(define guess_5 (betterGuess a guess_4))
+(define guess_6 (betterGuess a guess_5))
+(define guess_7 (betterGuess a guess_6))
+(define guess_8 (betterGuess a guess_7))
+(define guess_9 (betterGuess a guess_8))
+
+;; Number -> Number
+(define square (λ(x) (* x x)))
+
+;; Number Number -> Number
+(define distance (λ(a b) (abs (- a b))))
+
+;; Number Number -> Boolean
+(define goodEnough?
+  (λ(x guess)
+    (< (distance (square guess) x) epsilon)))
+
+
+;; An Interface function - sets up (sqrt-iter x guess).
+;; Number -> Number
+(define mysqrt
+  (λ(x)
+    (sqrt-iter x guess_0)))
+
+
+;;;  A Helper function - intended to be called in (mysqrt x).
+;; Number Number -> Number
+;; x : approximate the square root of x
+;; guess: the current guess 
+(define sqrt-iter
+  (λ(x guess)
+    (if (goodEnough? x guess)
+        guess
+        (sqrt-iter x (betterGuess x guess)))))
+
+
+
+;; the first 10 guesses.
+guess_0
+guess_1
+guess_2
+guess_3
+guess_4
+guess_5
+guess_6
+guess_7
+guess_8
+guess_9
+
+(goodEnough? a guess_0)
+(goodEnough? a guess_1)
+(goodEnough? a guess_2)
+(goodEnough? a guess_3)
+(goodEnough? a guess_4)
+(goodEnough? a guess_5)
+(goodEnough? a guess_6)
+(goodEnough? a guess_7)
+(goodEnough? a guess_8)
+(goodEnough? a guess_9)
+
+(mysqrt 2)
+(mysqrt 4)
+(mysqrt 9)
+(mysqrt 16)
+
+

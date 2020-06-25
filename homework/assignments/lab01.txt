@@ -1,0 +1,33 @@
+Due: Mon., 10/02
+
+
+
+
+
+1. Can (xor a b) short circuit? Why or why not?
+
+
+
+2. Build your own verision of the and operator that takes
+   2 aruguments, call it (myand a b). DO NOT USE and in your solution.
+
+   Does your version of and short circuit? If so, provide a test case.
+
+
+3. Write the function (leapYear? year) that takes a year and returns
+   true if the year is a leap year; false otherwise. Rules to determine a 
+   leap year are as follows:
+
+     Any year that is divisible by 400 IS a leap year.
+     All other leap years fall on years divisible by 4 and not by 100.
+
+    For further information check out this link:
+        https://www.wwu.edu/skywise/leapyear.html
+
+    For example,
+       (leapYear? 2000) -> true
+       (leapYear? 2004) -> true
+       (leapYear? 2100) -> false
+       (leapYear? 2017) -> false
+
+4. Try building (xor a b c).

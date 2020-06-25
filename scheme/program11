@@ -1,0 +1,45 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname program11) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+;; Recursion
+(define numDigitsR
+  (λ (n)
+    (if (< n 10)
+        1
+        (+ 1 (numDigitsR (quotient n 10))))))
+
+;; Trace Diagram
+; (ndr 568) =
+; (+ 1 (ndr 56))
+; (+ 1 (+ 1 (ndr 5)))
+; (+ 1 (+ 1 1))
+; (+ 1 2)
+; 3
+
+(check-expect (numDigitsR 5) 1)
+(check-expect (numDigitsR 45) 2)
+(check-expect (numDigitsR 185) 3)
+(check-expect (numDigitsR 1234567890) 10)
+
+;; Tail Recursion
+(define numDigits-iter
+  (λ (n ans)
+    (if (< n 10)
+        ans
+        (numDigits-iter (quotient n 10) (+ 1 ans)))))
+
+;; Trace Diagram
+; (ndi 586)
+; (ndi 58 2)
+; (ndi 5 3)
+; 3
+
+(define numDigitsI
+  (λ (n)
+    (numDigits-iter n 1)))
+
+(check-expect (numDigitsI 5) 1)
+(check-expect (numDigitsI 45) 2)
+(check-expect (numDigitsI 185) 3)
+(check-expect (numDigitsI 1234567890) 10)
+

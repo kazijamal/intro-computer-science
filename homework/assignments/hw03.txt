@@ -1,0 +1,25 @@
+Due: Wed., 9/13
+
+Exam: Wed., 9/20
+
+I. Review section 1.1.1 from the textbook Structure and Interpretation of 
+   Computer Programs. It is available online at:
+ 
+   https://mitpress.mit.edu/sicp/full-text/book/book.html
+
+
+
+II. Evaluate the following scheme expressions.
+
+  a. (+ 2 -3 10 (* 12 0))
+  b. (- (+ 2 3) (- 3))
+
+III. Express the following infix expressions as scheme expressions.
+
+  a. 2 + 3 - 5 + 1 - 4
+  b. 4 * (2 + 3) / 2 * 5 - 1
+  
+
+ 
+
+

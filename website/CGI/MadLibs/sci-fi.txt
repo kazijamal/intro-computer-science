@@ -1,0 +1,5 @@
+In the far away future, there was an alien species named {pn1}.
+The {pn1}s had advanced {pln1}.
+They had already {pastv1} most of the galaxy.
+Then, a huge {n1} from planet {pn2} came and {pastv2} all of the {pn1}s.
+A new alien species named {pn3} took over the planet soon afterwards.

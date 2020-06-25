@@ -1,0 +1,148 @@
+Due: Complete parts 1 - 6 by Fri. 3 / 23
+     Complete all parts by Mon. 3 / 26 
+
+Submission: Only submit the completed lab (all parts).
+            Send your program as an attachment
+            to rick.platek@stuycs.org.
+            Subject should read Simple Cryptography.
+
+
+You may work with a partner. If you do,
+send only 1 submission per group.
+
+
+
+
+
+Simple Cryptography with Strings
+=================================
+
+Cryptography is the science of secret messages and their applications.
+
+Encryption takes a message, called the plaintext, and converts it
+into a scrambled message, called the ciphertext.
+
+Decryption takes a ciphertext and turns it back into its original
+plaintext.
+
+Caesar Cipher: named after Julius Caesar
+----------------------------------------
+An easy encrpytion scheme by which each letter in the
+message is replaced with the letter three letters following it in the alphabet. 
+
+The Alphabet Wraps Around
+-------------------------
+It may help to view the alphabet as a circular sequence where each letter
+has a letter following it. A follows Z, etc.. 
+
+ex.
+  replace A with D, B with E, C with F, ..., X with A, Y with B, Z with C.
+
+
+
+Write a program to encrypt a word using the Caesar Cipher scheme.
+Assume all messages are a single word of uppercase letters.
+
+Sample Runs:
+============
+plaintext = CAMEL
+cyphertext = FDPHO
+plaintext = APPLE
+cyphertext = DSSOH
+
+
+
+1. A global variable is a variable initialized outside of a function 
+   definition. The scope of a global variable includes within function
+   definitions and the part of the program following the variable 
+   initialization.
+
+   Create a global variable named LETTERS to store the alphabet.
+   This variable must be accessible to the functions that you will
+   write below.
+
+   
+
+
+
+2. Prompt the user for some plaintext.
+    
+   You may use the string method upper() to convert each character to 
+   uppercase.
+      ex. 'hi'.upper() returns 'HI'
+
+3. Write the function find(char, word) to find the first index
+   position of char, a character, in the word. Fully document the function.
+
+
+
+4. Write the function testFind() to test your find(char,word) function.
+ 
+   A sample run of testFind() might produce:
+	find(A,STUYVESANT): 7
+	find(B,STUYVESANT): -1
+	find(C,STUYVESANT): -1
+	find(D,STUYVESANT): -1
+	find(E,STUYVESANT): 5
+	find(F,STUYVESANT): -1
+	find(G,STUYVESANT): -1
+	find(H,STUYVESANT): -1
+	find(I,STUYVESANT): -1
+	find(J,STUYVESANT): -1
+	find(K,STUYVESANT): -1
+	find(L,STUYVESANT): -1
+	find(M,STUYVESANT): -1
+	find(N,STUYVESANT): 8
+	find(O,STUYVESANT): -1
+	find(P,STUYVESANT): -1
+	find(Q,STUYVESANT): -1
+	find(R,STUYVESANT): -1
+	find(S,STUYVESANT): 0
+	find(T,STUYVESANT): 1
+	find(U,STUYVESANT): 2
+	find(V,STUYVESANT): 4
+	find(W,STUYVESANT): -1
+	find(X,STUYVESANT): -1
+	find(Y,STUYVESANT): 3
+	find(Z,STUYVESANT): -1
+   	
+
+5. Write the function encryptOne(char) to apply the Caesar Cipher
+   scheme to a character. Use the % operator  and the global variable
+   LETTERS in your solution. Document your function.
+   
+   Sample Runs:
+   ============
+    encrpytOne('A') returns 'D'
+    encrpytOne('Z') returns 'C'
+
+
+6. Write the function testEncryptOne() to test your function.
+
+
+
+
+7. Write the function encryptWord(plaintext) to encrypt a word.
+   The function encryptWord(plaintext) should have encryptOne(char)
+   as an internal helper function. In other words, limit the scope 
+   of encryptOne(char) to the function body of encryptWord(plaintext).
+   Test and document your code.
+
+8. Write the function testEncryptWord().
+
+9. Build functions to decrpyt the ciphertext. 
+
+10. Write a function to fully test your function(s) from question 6.
+
+
+11. Modify the code to perform ROT13 encryption and decryption. ROT13
+   uses 13 as the alphabet shift amount.
+
+12. Write a functuion to test your code.
+
+
+13. If you have not done so already, modify the code by using parameter
+    default values to generalize the alphabet shift amount. Have the 
+    default encryption and decryption perform the Caesar Cipher scheme.
+
+14. Test your code.

@@ -1,0 +1,110 @@
+**** Complete questions 1-3 for Friday. ****
+
+
+1.  Write (daysInMonth m y) where m and y are both integers. m represents a 
+    month (1 = Jan. 2 = Feb ... 12 = Dec.) and y is a year.
+    Feb (2) has 29 days in leap years, 28 otherwise.
+    April, June, Sept. and Nov. have 30 days
+    Jan, Mar, May, July, Aug. , Oct, Dec have 31 days
+
+    ;; Integer Integer -> Boolean
+    ;; d cannot be zero
+    ;; returns true if d is a divisor of n
+    (define divisor?
+       (λ(n d)
+         (zero? (remainder n d))))
+
+    ;; Integer -> Boolean
+    (define isLeapYear?
+      (λ(year)
+        (or (divisor? year 400)
+            (xor (divisor? year 4)
+                 (divisor? year 100)))))
+
+ 
+    
+   
+     ;; Unit testing
+     (daysInMonth 2 2016) ;; 29
+     (daysInMonth 2 2100) ;; 28
+     (daysInMonth 6 2000) ;; 30
+     (daysInMonth 7 2016) ;; 31
+     (daysInMonth 10 2017) ;; 31
+
+
+2. Scheme provides an general function to determine equality.
+          
+          ;;      Data Data -> Boolean
+          (equal? arg1 arg2)  -> true if arg1 is equivalent to arg2; false otherwise.
+
+   Evaluate the following:
+    a. (equal? (+ 2 1) 3)
+    b. (equal? #t #f)
+    c. (equal? + +)
+    d. (equal? 1 1 1)
+
+
+3. The String Data Type.
+    
+    A  string is a sequence of characters enclosed in double quotes.
+    
+    Examples:
+
+        An empty string is "".
+        Some other strings: "cat", "hat", "12345".
+
+    Evaluate the following:
+     a. (equal? "mouse" "Mouse")
+     b. (equal? "scheme" "scheme")
+     c. (equal? "at"   "ta")
+     d. (equal? "123" 123)
+
+*************************************************************************************
+**************   You are not responsible for completing this question for Fri..******
+**************   Question will be due at a later date. ******************************
+*************************************************************************************
+
+4. Write the function, (dayOfDate m d y), to find the day of the week for any date
+   in the Gregorian calendar for the centuries from 1700 to the 2000's.
+
+   Here are some example runs:
+    (dayOfDate "March" 5 2014) -> "Wed."
+    (dayOfDate "December" 15 2482) -> "Tues."
+  
+
+   Here is the Key-Value method to compute the date using March 5 2014.
+     - Find the last two digits of the year.        14
+     - Compute the quotient of this value with 4.    3
+     - Add day of the month.                         3 + 5 = 8
+     - Add the Month's key value. The key values are
+          0-April, July
+          1-January, October    
+          2-May   
+          3-August 
+          4-February, March, November
+          5-June
+          6-September, December
+                                                     8 + 4 = 12
+     - If January or February of a leap year subtract 1.
+
+     - Add century code. The codes are listed below. (century - value)
+       1700's-4   
+       1800's-2 
+       1900's-0 
+       2000's-6
+ 
+                                                    12 + 6 = 18
+
+     - Add the last two digits of the year.     18 + 14 = 32
+ 
+     - Find the remainder when divided by 7.      4
+
+     - Here is the correspondene between the number and the day.
+
+       0-Sat.   1-Sun.   2-Mon.  3-Tues. 4-Wed. 5-Thurs.  6-Fri          
+
+     You are strongly encouraged to first write several simpler functions such as:
+         (monthKey month)   ex. (monthKey "May") -> 2 (monthKey "August") -> 3
+         (centuryCode year) ex. (centuryCode 2014) -> 6 
+         (numToDay n)       ex. (numToDay 2) -> "Mon."
+     Then use these functions to write (dayOfDate month day year).

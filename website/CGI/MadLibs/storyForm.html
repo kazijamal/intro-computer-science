@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../../mystyle.css">
+        <title> Mad Libs Generator Story Selection </title>
+    </head>
+
+    <body>
+        <h1> Mad Libs Generator Story Selection </h1>
+        <form method="post" action="storyProcess.py">
+            Select the story:
+            <select name="storyType">
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Horror">Horror</option>
+                <option value="Mystery">Mystery</option>
+            </select><br>
+            <br>
+            Proper Noun:
+            <input type="text" name="pn1"
+            placeholder="e.g. John"
+            autofocus required="required"><br>
+            Plural Noun:
+            <input type="text" name="pln1"
+            placeholder="e.g. dogs"
+            autofocus required="required"><br>
+            Past Verb:
+            <input type="text" name="pastv1"
+            placeholder="e.g. walked"
+            autofocus required="required"><br>
+            Noun:
+            <input type="text" name="n1"
+            placeholder="e.g. computer"
+            autofocus required="required"><br>
+            Proper Noun:
+            <input type="text" name="pn2"
+            placeholder="e.g. New York"
+            autofocus required="required"><br>
+            Past Verb:
+            <input type="text" name="pastv2"
+            placeholder="e.g. ate"
+            autofocus required="required"><br>
+            Proper Noun:
+            <input type="text" name="pn3"
+            placeholder="e.g. Jeff"
+            autofocus required="required"><br>
+            <br>
+            <input type="submit" name="submitstory" value="Submit Story" />
+        </form>
+        <form method="post" action="../../index.html">
+            <input type="submit" name="return" value="Return To Homepage"/>
+        </form>
+    </body>
+</html>

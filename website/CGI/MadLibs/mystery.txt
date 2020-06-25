@@ -1,0 +1,10 @@
+The phone in the sheriff's office rang, reporting an incident.
+The sheriff called detective {pn1} to investigate the case.
+Thirteen {pln1} were murdered.
+{pn1} {pastv2} in shock.
+He grabs the {n1} from the drawer in a desk, and runs out the door.
+He soon finds the suspect, {pn2}.
+Upon meeting {pn2}, {pn1} {pastv2} {pn2} in the face.
+While {pn1} is celebrating, a bullet flies past his left ear:
+it was his arch nemesis: {pn3}.
+To be continued...

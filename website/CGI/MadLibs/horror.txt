@@ -1,0 +1,8 @@
+It was a dark and gloomy night.
+{pn1} was going to his attic to look for an old photo album.
+{pn1} saw some {pln1} and blood in the corner of the attic.
+They {pastv1} something behind them.
+When {pn1} turned around, they saw a huge {n1}.
+{pn1} screamed for {pn2}, but they didn't respond.
+The {n1} {pastv2} {pn1}, and he dissapeared.
+When {pn3} ({pn1}'s friend) visited the attic, he only saw a corpse laying motionless on the wooden floor.

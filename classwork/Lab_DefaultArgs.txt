@@ -1,0 +1,63 @@
+
+
+1. Write the function find(sub, s, start = 0) that reports
+   the lowest index of sub in s beginning at index start.
+   Your solution should not produce a side effect.
+   Refrain from using str methods in your solution.
+
+   Test Cases:
+   find('at', 'cat') -> 1
+   find('is', 'mississippi', 2) -> 4
+   find('z', 'python') -> -1 
+
+
+
+
+   def find(sub,s, start = 0):
+    '''Assume both sub and s are strings and start is an int.
+        Return the lowest index in s where substring sub is found,
+       such that sub is contained within S[start:].  Optional
+       argument start is interpreted as in slice notation.
+       
+       Return -1 on failure.'''
+
+
+2. Write the function fib(n, first = 0 , second = 1) that computes
+   the nth term of the Fibonacci sequence starting with first and second.
+   Your solution should not produce a side effect.
+
+   Test Cases:
+     fib(1) -> 0
+     fib(1,2,3) -> 2
+     fib(2,2,3) -> 3
+     fib(6,first = 1) -> 8
+     fib(10,second = 2) -> 68
+
+
+3. Write the function collatz(n,display=False) that returns the length
+   of the Collatz (Hailstone) sequence. If the optional argument is true
+   your function also prints the sequence as a side effect.
+
+   The Collatz conjecture is a conjecture in mathematics that concerns a 
+   sequence defined as follows: start with any positive integer n. Then each
+   term is obtained from the previous term as follows: if the previous term 
+   is even, the next term is one half the previous term. Otherwise, the next
+   term is 3 times the previous term plus 1. The conjecture is that no matter
+   what value of n, the sequence will always reach 1.
+
+  Test Cases               Return Value                    Side Effect (Printed to terminal)
+   collatz(1)                 1                             <No side effect> 
+   collatz(1,True)            1                             1
+   collatz(2,True)            2                             2 1   
+   collatz(3,True)            8                             3 10 5 16 8 4 2 1 
+   collatz(4)                 3                             <No side effect>
+   collatz(5)                 6                             <No side effect>
+
+   
+4. Write the function longestSeed(start, end , display=False) to return the n found
+   between start and end which produces the longest collatz sequence.
+
+   Test Case:             Return Value                     Side Effect
+   longestSeed(1,4)          3                             <No side effect> 
+   longestSeed(4,6,True)     5                              4 2 1
+                                                            5 16 8 4 2 1

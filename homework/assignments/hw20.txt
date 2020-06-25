@@ -1,0 +1,216 @@
+Due: Mon, 11/06
+
+1. Exam #4: 11/10 (Fri.)
+2. Write (sum L) that computes the sum of a list of numbers.
+3. Write (avg L) to compute the mean of a list of numbers.
+4. Review the solutions to exam #3.
+
+Exam #3 Solutions:
+
+Part I (25 points)
+=========
+           (define foo
+                  (lambda (a b)
+			(if (= (remainder a b) 0)
+                            b
+                            (foo b (remainder a b)))))
+
+
+    a. Does this function use a recursive or iterative process?
+
+     Ans:    The recusive funcion, foo, uses an iterative process since there 
+             is no delayed operation in the recursive step.
+
+
+    b. Is this function tail recursive?
+
+     Ans:  Yes, a recursive function that uses an iterative process is commonly known
+           as a tail recursive function.
+
+    c. Evaluate (foo 55 15)
+
+     Ans :  (foo 55 15)
+          = (foo 15 10)
+          = (foo 10 5)
+          = 5
+
+
+    d. Evaluate (foo 14  24)
+ 
+      Ans:  (foo 14 24)
+          = (foo 24 14)
+          = (foo 14 10)
+          = (foo 10 4)
+          = (foo 4 2)
+          = 2
+
+    e. Evaluate (foo 12 7)
+
+      Ans:  (foo 12 7)
+          = (foo 7 5) 
+          = (foo 5 2)
+          = (foo 2 1)
+          = 1
+
+    f. Describe the arguments that will cause the foo function
+       to produce an error? What kind of error is produced?
+
+      Possible answers: 
+
+          1. If b = 0, then there will be a divison by zero error.
+          2. If the arguments are non-integers, then a contract violation occurs.
+
+
+Part II (25 points)
+==================
+
+ The harmonic series is defined to be:
+
+   h(n) =  1 + 1/2 + 1/3 + 1/4 +...+1/n.
+
+ n, the parameter of h(n), is expected to be a positive integer.
+
+
+
+
+a. Evaluate the following, you may leave your answer as a rational
+   number.
+
+   h(1) = 1
+
+
+
+   h(2) = 1 + 1/2 = 3.5
+
+
+
+ 
+   h(3) = 1 + 1/2 + 1/3 = 11/6
+
+
+b.  Write a function to compute the harmonic series using n terms.
+   
+    (define h
+           (lambda (n)
+
+    Version 1:
+    ==========
+      (define h 
+          (lambda (n)
+              (if (= n 1)
+                  1
+                  (+ 1 (/ 1 n) (h (- n 1))))))
+
+
+    Version 2: 
+    ===========
+      (define h
+           (lambda (n)
+            (h-iter n 1)))
+
+      (define h-iter
+           (lambda (n ans)
+             (if (= n 1)
+                 ans
+                 (h-iter (- n 1) (+ ans (/ 1 n))))))
+
+
+
+c. Does your function use an iterative or recursive process?
+
+   Answers:
+        Version #1 uses a recursive process.
+        Version #2 uses an iterative process.
+
+
+d. Draw a trace diagram for (h 3).
+
+   Version 1 Trace:
+    (h 3) = (+ (/ 1 3) (h 2))
+          = (+ 1/3 (+ (/ 1 2) (h 1)))
+          = (+ 1/3 (+ 1/2 1))
+          = (+ 1/3 3/2)
+          = 11/6
+
+   Version 2 Trace:
+    (h 3) = (h-iter 3 1)
+          = (h-iter 2 4/3)
+          = (h-iter 1 11/6)
+          = 11/6
+
+
+Part III (25 points)
+=========
+ Given the function (f n) defined below.
+
+   (define f 
+       (lambda (n) 
+           (cond ((> n 3) (+ (f (- n 1)) (f (- n 2)) (f (- n 3))))
+	    	 ((= n 1) 0)
+                 ((= n 2) 1)
+                 (else 3))))
+                  
+a. Draw a tree recursive trace diagram for (f 6).
+
+
+
+b. If (time (f 100)) returns 15 ms , (time (f 101)) returns 20 ms,
+   and (time (f 102)) returns 45ms what is time would you expect
+   for (f 103)?
+
+   Ans: Since (f 103) = (f 102) + (f 101) + (f 100)
+      
+        then (time (f 103)) = 45ms + 20ms + 15ms
+                            = 80ms
+
+c. Complete the skeleton for an iterative version of (f n).
+
+   (define fI
+       (lambda (n)
+         (f-iter 0 1 3 n)))
+
+   (define f-iter
+   	   (lambda (f s t n)
+	    (cond ((= n 1) f )
+	    	  ((= n 2) s )
+		  ((= n 3) t )
+		  (else (f-iter s 
+                                t
+                                (+ f s t)
+                                (- n 1))))))
+
+
+
+                           
+
+Part IV(25 points)
+------------------
+   Write the function (maxDigit n), where n is a nonnegative
+   integer, that evaluates to the maximum digit of n.
+
+  Test Cases:
+   (maxDigit 3) -> 3
+   (maxDigit 1958) -> 9
+   (maxDigit 35254) -> 5
+
+ 
+ Ans:
+  ;; version 1
+     (define maxDigit
+            (lambda (n)
+                (if (< n 10)
+                     n 
+                    (max (remainder n 10)
+                         (maxDigit (quotient n 10))))))
+
+
+  ;; version 2
+       (define maxDigit
+           (lambda (n)
+               (if (< n 10)
+                   n
+                   (max (onesDigit n)
+                        (maxDigit (removeOnesDigit n))))))
+
+
+

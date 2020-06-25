@@ -1,0 +1,22 @@
+Due: Fri. 9/29
+==============
+
+
+1. Write two versions of the predicate function (between? n a b) that checks
+   if n is strictly between a and b.
+ 
+   a. In the first version, assume a < b.
+   b. In the second version, don't assume a < b.
+  
+
+
+2. Write the exclusive or function, (xor a b), that takes two boolean valued 
+   arguments and returns true whenever exactly one of its arguments is true; 
+   false otherwise.
+
+   Test Cases:
+   ------------
+   (xor #t #t) -> #f
+   (xor #t #f) -> #t
+   (xor #f #t) -> #t
+   (xor #f #f) -> #f

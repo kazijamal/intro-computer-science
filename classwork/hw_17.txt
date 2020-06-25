@@ -1,0 +1,43 @@
+I. Consider the code below:
+
+def f(x):
+    a = 2
+    t = x + a
+    s = 2*t
+    return s
+
+a = 5
+t = 12
+s = 3
+print 'a =', a
+u = f(t)
+print 'a = ', a
+print 't =', t
+print 's =', s
+print 'u =', u
+
+a. Identify the formal parameter(s) of f(x).
+
+b. Identify the local variable(s) of f(x).
+
+c. What is the output?
+
+
+II. Review collatz(n,display=False).
+
+    def collatz(n,display=False):
+        ans = 1
+	while n != 1:
+	    if display:
+	       print n,    # print without starting a new line
+	    if iseven(n):
+	       n  /= 2
+	    else:
+	       n = 3 * n + 1
+	    ans += 1
+	if display:
+	    print n      # print and start a new line
+	return ans
+
+
+III. Complete question #4 in Lab_Default_Args.

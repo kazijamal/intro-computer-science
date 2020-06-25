@@ -1,0 +1,32 @@
+Due: Tues., 9/26 
+====
+
+Part I: Evaluate the following.
+=======
+  a. (quotient 33 (- 5 2))
+  b. (remainder 82 8)
+  c. (remainder 4 11)
+  d. (quotient 15 (min 0 3 2))
+
+
+Part II:
+========
+Review.
+
+   ;; Integer -> Digit
+   ;  Digit : 0,1,2,...,8,9
+   (define onesDigit
+     (lambda (n)
+         (abs (remainder n 10))))
+
+
+
+Write the function (removeOnesDigit n) that returns an integer
+with the ones digit removed.
+
+Test cases,
+
+ a. (removeOnesDigit 235) -> 23
+ b. (removeOnesDigit -335) -> -33
+
+

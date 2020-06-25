@@ -1,0 +1,68 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname lab024) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+;; Integer -> Integer
+(define removeOnesDigit
+  (λ (n)
+    (quotient n 10)))
+
+;; Integer -> Integer
+(define onesDigit
+  (λ (n)
+    (abs (remainder n 10))))
+
+;; Integer -> Integer
+(define tensDigit
+  (λ (n)
+    (onesDigit (removeOnesDigit n))))
+
+;; Integer -> Boolean
+(define isLeapYear?
+  (λ (year)
+    (or (zero? (remainder year 400))
+        (and (zero? (remainder year 4))
+             (not (zero? (remainder year 100)))))))
+
+;; Integer Integer Integer -> String
+(define allButRemainder
+  (λ (m d y)
+    (+ (+ (if (and (or (= m 1) (= m 2)) (isLeapYear? y))
+     (- (+ (+ (quotient y 4) 
+          d)
+       (cond ((or (= m 4) (= m 7)) 0)
+             ((or (= m 1) (= m 10)) 1)
+             ((= m 5) 2)
+             ((= m 8) 3)
+             ((or (= m 2) (= m 3) (= m 11)) 4)
+             ((= m 6) 5)
+             ((or (= m 9) (= m 12)) 6)
+             (else "Invalid month.")))
+        1)
+     (+ (+ (quotient y 4) 
+          d)
+       (cond ((or (= m 4) (= m 7)) 0)
+             ((or (= m 1) (= m 10)) 1)
+             ((= m 5) 2)
+             ((= m 8) 3)
+             ((or (= m 2) (= m 3) (= m 11)) 4)
+             ((= m 6) 5)
+             ((or (= m 9) (= m 12)) 6)
+             (else "Invalid month.")))))
+       (cond ((= (removeOnesDigit (removeOnesDigit y)) 17) 4)
+             ((= (removeOnesDigit (removeOnesDigit y)) 18) 2)
+             ((= (removeOnesDigit (removeOnesDigit y)) 19) 0)
+             ((= (removeOnesDigit (removeOnesDigit y)) 20) 6)
+             (else error))
+       onesDigit (* tensDigit 10))))
+
+(define dayOfDate
+  (λ (m d y)
+    (cond ((= 0 (remainder (allButRemainder m d y) 7)) "Sat.")
+          ((= 1 (remainder allButRemainder 7)) "Sun.")
+          ((= 2 (remainder allButRemainder 7)) "Mon.")
+          ((= 3 (remainder allButRemainder 7)) "Tues.")
+          ((= 4 (remainder allButRemainder 7)) "Wed.")
+          ((= 5 (remainder allButRemainder 7)) "Thurs.")
+          ((= 6 (remainder allButRemainder 7)) "Fri."))))
+
+(check-expect (dayOfDate 3 5 2014) "Wed.")

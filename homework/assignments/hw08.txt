@@ -1,0 +1,11 @@
+Due: Wed. 9/27
+==============
+
+
+1. Assume n is a nonnegative integer. 
+   Assume d is a positive integer.
+   Describe the range (a.ka. codomain, a.k.a. image) of the function call (remainder n d).
+
+2. Complete the minimum coin program started in class.
+
+  

@@ -1,0 +1,68 @@
+1. Review a solution to exercise #3 from whileLoopExercises_II.txt and be prepared to 
+   present a solution to question #4 from whileLoopExercises_II.txt.
+
+  Ask the user for two positive integers, and print
+  all the odd integers from a to b.
+
+   Test Run #1:
+     Enter a positive integer: 2
+     Enter another: 15
+     3
+     5
+     7
+     9
+     11
+     13
+
+   Test Run #2:
+     Enter a positive integer: 9
+     Enter another: 1
+     1
+     3
+     5
+     7
+ Solution:
+  # function
+  isodd = lambda n : x % 2 == 1
+
+  # input
+  a = int(raw_input('Enter a positive integer: '))
+  b = int(raw_input('Enter another:'))
+
+  # make a <= b
+  a, b = min(a,b), max(a,b)
+
+  # make a odd if necessary
+  a = a if isodd(a) else a + 1
+
+  # print the odds from a up to b
+  while a < b:
+  	print a
+        a += 2
+
+
+2. Write the script reverseWord.py. Use a for loop to reverse
+   the characters in a string. Use the slice operator to verify your code.
+
+
+
+Sample Run:
+
+     enter word: stressed
+     stressed reversed is desserts
+     It works.   # use the slice operator to check your work
+
+
+
+
+3. Write the script that reads a word and 
+   prints the first letter that repeats.
+   Write two versions one using a for loop 
+   the other a while loop. The break command may be helpful.
+
+Sample Run:
+   enter word:  camel
+   No letter repeats.
+
+   enter word: mississippi
+   The first letter that repeats is i.

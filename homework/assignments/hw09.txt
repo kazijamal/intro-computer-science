@@ -1,0 +1,23 @@
+Due: Thurs. 9/28
+==============
+
+
+1. Write the predicate function (pos? n) that takes a number,n , and returns
+   true if n is positive; false otherwise.
+
+ 
+   Test Cases:
+   (pos? 3) -> #t
+   (pos? 0) -> #f
+   (pos? -2) -> #f
+  
+
+
+2. Write the predicate function (increasing? a b c) that takes 3 numbers 
+   and returns true if the numbers are strictly increasing from left to right;
+   false otherwise.
+
+   Test Cases:
+   (increasing? 1 2 3) -> true
+   (increasing? 5 5 8) -> false
+   (increasing? 9 8 1) -> false

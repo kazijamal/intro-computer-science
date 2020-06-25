@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../../mystyle.css">
+        <title> Online Hardware Quiz </title>
+    </head>
+
+    <body>
+        <h1> Online Hardware Quiz </h1>
+        <form method="post" action="quizProcess.py">
+            1. What signal is distributed throughout the entire chip to tell the circuits when to start performing their next operation? <br>
+            <input type="radio" name="q1" value="a1"> "circuit" signal<br>
+            <input type="radio" name="q1" value="a2"> "operational" signal<br>
+            <input type="radio" name="q1" value="a3"> "clock" signal<br>
+            <input type="radio" name="q1" value="a4"> "cycle" signal<br>
+            <input type="radio" name="q1" value="a5"> "procedural" signal<br>
+            <br>
+            2. What is the delay between a request from the CPU and the response from the memory? <br>
+            <input type="radio" name="q2" value="a1"> memory delay<br>
+            <input type="radio" name="q2" value="a2"> response time<br>
+            <input type="radio" name="q2" value="a3"> speed<br>
+            <input type="radio" name="q2" value="a4"> address<br>
+            <input type="radio" name="q2" value="a5"> latency<br>
+            <br>
+            3. What are the two large chips that provide most of the function in the mainboard (motherboard) collectively called? <br>
+            <input type="radio" name="q3" value="a1"> socket<br>
+            <input type="radio" name="q3" value="a2"> chipset<br>
+            <input type="radio" name="q3" value="a3"> functional chip<br>
+            <input type="radio" name="q3" value="a4"> CPU<br>
+            <input type="radio" name="q3" value="a5"> memory<br>
+            <br>
+            4. What is a mechanical device that rotates and has moving arms, designed to randomly access files on its surface? <br>
+            <input type="radio" name="q4" value="a1"> CD drive<br>
+            <input type="radio" name="q4" value="a2"> hard disk<br>
+            <input type="radio" name="q4" value="a3"> memory<br>
+            <input type="radio" name="q4" value="a4"> RAM<br>
+            <input type="radio" name="q4" value="a5"> solid state disk<br>
+            <br>
+            5. What is the purpose of ethernet? <br>
+            <input type="radio" name="q5" value="a1"> to provide access to information from the computer's storage<br>
+            <input type="radio" name="q5" value="a2"> to make requests to the memory in the computer<br>
+            <input type="radio" name="q5" value="a3"> to provide video output for a display connected to the computer<br>
+            <input type="radio" name="q5" value="a4"> to connect the computer to other computers on the internet<br>
+            <input type="radio" name="q5" value="a5"> to connect different memory, disks, and adapter cards to the computer<br>
+            <br>
+            6. At what speeds do external SATA (e-sata) devices operate? <br>
+            <input type="radio" name="q6" value="a1"> 300 MB/s<br>
+            <input type="radio" name="q6" value="a2"> 1 GB/s<br>
+            <input type="radio" name="q6" value="a3"> 80 MB/s<br>
+            <input type="radio" name="q6" value="a4"> 600 MB/s<br>
+            <input type="radio" name="q6" value="a5"> 100 MB/s<br>
+            <br>
+            7. What type of processor is the GPU? <br>
+            <input type="radio" name="q7" value="a1"> general purpose<br>
+            <input type="radio" name="q7" value="a2"> functional<br>
+            <input type="radio" name="q7" value="a3"> encoding<br>
+            <input type="radio" name="q7" value="a4"> specialized<br>
+            <input type="radio" name="q7" value="a5"> procedural<br>
+            <br>
+            8. What company first introduced a CPU architecture with a memory controller allowing the memory to connect directly to the CPU, and during what year? <br>
+            <input type="radio" name="q8" value="a1"> AMD; 1999<br>
+            <input type="radio" name="q8" value="a2"> Intel; 2008<br>
+            <input type="radio" name="q8" value="a3"> AMD; 2003<br>
+            <input type="radio" name="q8" value="a4"> Nvidia; 2004<br>
+            <input type="radio" name="q8" value="a5"> Intel; 2003<br>
+            <br>
+            9. What is the name of the "standard size" mainboard (motherboard), which typically has slots for seven adapter cards? <br>
+            <input type="radio" name="q9" value="a1"> MATX<br>
+            <input type="radio" name="q9" value="a2"> ATX<br>
+            <input type="radio" name="q9" value="a3"> BTX<br>
+            <input type="radio" name="q9" value="a4"> EBX<br>
+            <input type="radio" name="q9" value="a4"> NLX<br>
+            <br>
+            10. What type of memory stores data in an electronic circuit called a capacitor? <br>
+            <input type="radio" name="q10" value="a1"> DIMM<br>
+            <input type="radio" name="q10" value="a2"> SRAM<br>
+            <input type="radio" name="q10" value="a3"> RAM<br>
+            <input type="radio" name="q10" value="a4"> SODIMM<br>
+            <input type="radio" name="q10" value="a5"> DRAM<br>
+            <br>
+            <input type="submit" name="submitquiz" value="Submit Quiz" />
+        </form>
+        <form method="post" action="../../index.html">
+            <input type="submit" name="return" value="Return To Homepage"/>
+        </form>
+    </body>
+</html>

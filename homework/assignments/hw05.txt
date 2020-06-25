@@ -1,0 +1,31 @@
+Due: 9/18, Mon.
+
+Exam : 9/20 Wed.
+
+Assume the following constant has been declard.
+
+	(define my_pi 3.14)
+       
+
+
+Problem 1:
+==========
+
+    Write the function circle_area that takes a radius and 
+    returns the area of a circle with that radius.
+
+   ;; Number -> Number
+   ;  r is a radius
+   (define circle_area
+      (lambda(r)
+        < your code goes here> 
+
+
+Problem 2:
+==========
+  Use the function circle_area to write the function annulus_area
+  that takes 2 radii and returns the area of the annulus (donut).
+  Describe any preconditions as a comment.
+  
+
+	

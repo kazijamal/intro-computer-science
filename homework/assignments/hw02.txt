@@ -1,0 +1,16 @@
+Due: Tues. 9/12
+================
+
+Directions: Write your solutions in your notebook.
+            For each infix expression do the following:
+               a. Evaluate the infix expression.
+               b. Convert the expression into prefix notation.
+               c. Evaluate the prefix expression.
+
+1. 5 x 8 + 4
+
+
+2. 10 / ( 5 - 3) x 2
+
+
+

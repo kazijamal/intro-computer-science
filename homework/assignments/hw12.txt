@@ -1,0 +1,30 @@
+Due Thurs., 10/5
+
+Directions: Complete the following 2 questions.
+
+
+1. Consider the following definition,
+
+ (define xor3
+    (lambda (a b c)
+          (cond ((and a b c) #f)
+                ((xor a b) (not c))
+		(else c))))
+
+  If the expression (xor3 #f #f #t) is evaluated,
+  identify which quesions (a.k.a. predicates) and answers are evaluated. 
+   
+
+
+2. Assume the if operator is broken. Write the (newIf a b c) using a cond
+   form to fix the operator.
+   
+    Test Cases:
+     (newIf (even? 3) 1 2) -> 2
+     (newIf (odd? 3) 1 2) -> 1
+
+   Why does (newIf (even? 3) (/ 3 0) 2) result in a division by zero error,
+   but (if (even? 3) (/ 3 0) 2) does not?
+
+
+ 

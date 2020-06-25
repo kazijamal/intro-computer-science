@@ -1,0 +1,25 @@
+Due: 9/14 Thurs.
+
+Write a scheme program to calculate your final average. Your average is 
+comprised of 3 weighted componenets: Test average, Hw grade, and class participation.
+The respective weights are 80%,10%, and 10%. Assume you have taken 4 in-class exams
+and a final exam which counts as 2 in-class exams. You'll need to make up all of your
+grades.
+
+Complete the program started below.
+
+;;; Calculate your final grade.
+;;    - 80% test  (4 exams plus a final (counts as 2 exams))
+;;    - 10%  hw
+;;    - 10% class participation
+
+;;I.  Create variables for each of the above weights.
+(define test_wt 0.8)
+
+
+;;II. Create variables for each exam grade plus the final. Make a variable for each exam.
+
+;;III. Create variables for the hw and class participation grade (out of 100).
+
+
+;;IV. Calculate your final grade.

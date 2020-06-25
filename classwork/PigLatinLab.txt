@@ -1,0 +1,103 @@
+Due: Tues. 4/10 (Before Wednesday)
+=============
+
+Groups: You may work with a partner.
+======
+
+Submission Instructions:
+========================
+Each group must send their final solution to rick.platek@stuycs.org.
+ Subject : You and your partner's name , period
+ Copy Part I solutions into the body of the email.
+ Attach: pigtranslator.py
+
+
+Lab Problems
+============
+
+I. Evaluate the following:
+
+  a. 'cabbage'[::-1]
+  b. 'cabbage'[:: 2]
+  c. [1,3,5,7][::-2]
+  d. (abs,lambda x: x + 3)[-1](5)
+  e. type(())
+  f. type([])
+  g. ' '.join(['how', 'are', 'you'])
+  h. list('abc')
+  i. tuple(list('abc'))
+  j. map(str.lower,'AbcD')
+  k. '324'.isdigit()
+  l. 'ab-9'.isalnum()
+  m. 'abc'.isalpha()
+  n. '?ab?cd.!?'.strip('.!?')
+  o. '\thi  '.strip()
+  p. 'Hi'.istitle()
+  q.  'HI'.istitle()
+  r.  'see'.find('e')
+  s.  'see'.rfind('e')
+  t.  'see'.find('z')
+  
+II. Write the script pigtranslator.py that translates an
+    english sentence to pig latin.
+
+    Rules for transalation:
+    1. Any word that begins with a vowel then add 'way' to
+       the end.
+
+       ex. apple  becomes appleway
+           orange becomes orangeway
+
+    2. Otherwise, move the leading letters up to the first
+       vowel to the end of the word then add 'ay'.
+
+       ex. strong becomes ongstray
+           program becomes ogrampray
+
+    3. If there are no vowels in the word then add 'ay' to the end.
+
+       ex. zzz becomes zzzay
+
+    4. y is a vowel unless it begins a word.
+
+       ex.  you becomes ouyay
+            fly becomes yflay
+
+    5. u is a vowel unless it is part of a qu combination.
+
+       ex.  unique becomes uniqueway
+            quiet  becomes ietquay
+
+    6. Each word in a hyphenated word should be translated
+       individually.
+
+       ex.  semi-perimeter becomes emisay-erimeterpay
+
+Your program should read in a sentence and translate it to pig latin
+while preserving the structure of the english sentence. Keep punctuation
+marks and capitalization.
+
+
+If you need help you may use the program skeleton pigskeleton.py
+to organize your code, but it is not required that use use
+pigskeleton.py.
+
+
+    Examples runs of pigtransla
+tor.py
+    -------------------------------
+    english: How are you, Bob?
+    pig latin: Owhay areway ouyay, Obbay?
+
+    english: Stop YELLING!
+    piglatin: Opstay ELLINGYAY!
+
+    english: I have a two-year-old.
+    pig latin: Iway avehay away otway-earyay-oldway.
+
+
+    Assume only the punctuation marks: ,.!?) end a word.
+    Assume a word is either all uppercase, all lowercase or a title.
+
+
+
